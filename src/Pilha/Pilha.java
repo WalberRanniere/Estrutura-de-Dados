@@ -35,6 +35,15 @@ public class Pilha implements PilhaInterface{
         }
         Object p = pilha[topo];
         pilha[topo--] = null;
+        if(size() == tamanho/2){
+            tamanho /= 2;
+            Object[] a = new Object[tamanho]; 
+            for(int i = 0; i <= topo;i++){
+                a[i] = pilha[i];
+                
+            }
+            System.err.println("O tamamho atual é: " + tamanho);
+        }
         return p;
     }
 
@@ -45,6 +54,7 @@ public class Pilha implements PilhaInterface{
             for(int i = 0; i <= topo; i++){
                 a[i] = pilha[i];
             }
+            System.err.println("O tamamho atual é: " + tamanho);
             pilha = a;
         }
         pilha[++topo] = elemento;
