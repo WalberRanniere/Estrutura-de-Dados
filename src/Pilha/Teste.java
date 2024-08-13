@@ -29,6 +29,5 @@ public class Teste {
         p.pop();
         System.out.println("O Topo é: " + p.top());
 
-
     }
 }
