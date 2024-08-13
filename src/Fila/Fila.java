@@ -13,10 +13,6 @@ public class Fila {
     }
 
     public int size(){
-        System.err.println("O índice do primeiro é: " + primeiro);
-        System.err.println("O índice do ultimo é: " + ultimo);
-        System.out.println("O elemento do último é: " + fila[ultimo]);
-
         return qtd;
     }
 
@@ -42,13 +38,11 @@ public class Fila {
             primeiro = 0;
         } 
         else if(ultimo == tamanho-1){
-            System.err.println("Entrei aqui e deveria");
             ultimo = -1;
             fila[++ultimo] = elemento;
             qtd++;
         } 
-        else if( ultimo + 1 == size() && primeiro == 0){
-            System.err.println("Tentamos Duplicar");
+        else if(ultimo + 1 == tamanho && primeiro == 0){
             tamanho = tamanho*2;
             Object[] nova_fila = new Object[tamanho];
             for(int i = 0; i <= size()-1; i++){
@@ -58,9 +52,21 @@ public class Fila {
             fila[++ultimo] = elemento;
             qtd++;
         }
-        /* else if( primeiro > ultimo && primeiro-1 == ultimo){
-            
-        } */
+        else if( primeiro-1 == ultimo){
+            tamanho = tamanho*2;
+            Object[] nova_fila = new Object[tamanho];
+            for(int i = 0; i <=size()-1; i++){
+                if(primeiro == size()-1){
+                    primeiro = 0;
+                }
+                nova_fila[i] = fila[primeiro++];
+            }
+            fila = nova_fila;
+            ultimo = size()-1;
+            primeiro = 0;
+            fila[++ultimo] = elemento;
+            qtd++;
+        }
         else{
             fila[++ultimo] = elemento;
             qtd++;
@@ -73,11 +79,9 @@ public class Fila {
         }
         else {
             Object elemento_retirado =  fila[primeiro];
-            System.err.println("O elemento que vai ser retirado é: " + elemento_retirado);
             fila[primeiro] = null;
             primeiro++;
             qtd--;
-            System.err.println("O indície do primeiro se tornou: " + primeiro);
             return elemento_retirado;
         }
     }

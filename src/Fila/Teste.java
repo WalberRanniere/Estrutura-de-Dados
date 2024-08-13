@@ -33,22 +33,29 @@ public class Teste {
         System.err.println("A Fila está Vazia: " + fila.isEmpty()); */
 
         fila.queue(4);
+        System.out.println("Coloquei o primeiro.");
 
         fila.queue(8);
+        System.out.println("Coloquei o segundo.");
+
 
         fila.queue(12);
-        fila.queue(16);
+        System.out.println("Coloquei o terceiro");
 
+        fila.queue(16);
+        System.out.println("Coloquei o quarto.");
+
+
+        fila.dequeue();
         
         fila.queue(20);
+        System.out.println("Coloquei o quinto.");
 
-        
+        fila.queue(24);
+        System.err.println("Coloquei o sexto.");
+
         System.err.println("A Quantidade de Elementos: " + fila.size());
-
-
-
-
-
+        System.err.println("O primeiro elemento é: " + fila.first());
 
 
     }
