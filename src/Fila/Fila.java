@@ -37,7 +37,7 @@ public class Fila {
             qtd++;
             primeiro = 0;
         } 
-        else if(ultimo == tamanho-1){
+        else if(ultimo == tamanho-1 && fila[0] == null){
             ultimo = -1;
             fila[++ultimo] = elemento;
             qtd++;
@@ -79,8 +79,7 @@ public class Fila {
         }
         else {
             Object elemento_retirado =  fila[primeiro];
-            fila[primeiro] = null;
-            primeiro++;
+            fila[primeiro++] = null;
             qtd--;
             return elemento_retirado;
         }

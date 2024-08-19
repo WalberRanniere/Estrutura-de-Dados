@@ -46,17 +46,12 @@ public class Teste {
         System.out.println("Coloquei o quarto.");
 
 
-        fila.dequeue();
         
         fila.queue(20);
         System.out.println("Coloquei o quinto.");
 
-        fila.queue(24);
-        System.err.println("Coloquei o sexto.");
 
         System.err.println("A Quantidade de Elementos: " + fila.size());
         System.err.println("O primeiro elemento é: " + fila.first());
-
-
     }
 }
